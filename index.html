@@ -33,6 +33,18 @@
             max-width: 600px;
             margin: 0 auto;
         }
+        .download-backup {
+            margin-top: 20px;
+            color: #666;
+            font-size: 14px;
+        }
+        .download-link {
+            color: #3498db;
+            text-decoration: none;
+        }
+        .download-link:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
@@ -40,17 +52,18 @@
     <div class="loader"></div>
     <div class="message">
         <p>Your download has started. You'll be redirected to a special offer in a moment...</p>
+        <p class="download-backup">If the download doesn't start automatically, <a href="https://drive.google.com/uc?export=download&id=1t04kDrncLdoc0sreJtKA_S8jG86Zi302" class="download-link">click here</a></p>
     </div>
     
     <script>
         window.onload = function() {
-            // Start the download process
-            window.open('https://drive.google.com/file/d/1t04kDrncLdoc0sreJtKA_S8jG86Zi302/view?usp=sharing', '_blank');
+            // Try direct download first
+            window.location.href = 'https://drive.google.com/uc?export=download&id=1t04kDrncLdoc0sreJtKA_S8jG86Zi302';
             
             // Redirect to product page after delay
             setTimeout(function() {
                 window.location.href = 'https://cloudengineerac.mysamcart.com/checkout/cloud-engineer-handbook?coupon=handbook50';
-            }, 3000);
+            }, 4000); // Increased to 4 seconds to give more time for download to start
         };
     </script>
 </body>
