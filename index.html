@@ -33,16 +33,28 @@
             max-width: 600px;
             margin: 0 auto;
         }
+        .success-message {
+            color: #2ecc71;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .offer-message {
+            color: #333;
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin-top: 15px;
+        }
         iframe {
             display: none;
         }
     </style>
 </head>
 <body>
-    <h1>Your Cloud Engineering Guide is Downloading...</h1>
-    <div class="loader"></div>
     <div class="message">
-        <p>Your download has started. You'll be redirected to a special offer in a moment...</p>
+        <p class="success-message">✅ Your Cloud Engineering Guide has been downloaded!</p>
+        <p class="offer-message">But before you go...<br>
+        I've got something special that our students have loved combining with the free guide!<br>
+        A limited-time offer is coming your way in just a moment...</p>
     </div>
     
     <iframe id="download-frame"></iframe>
@@ -60,8 +72,8 @@
             
             // Redirect after delay
             setTimeout(function() {
-                window.location.href = 'https://cloudengineerac.mysamcart.com/checkout/cloud-engineer-handbook?coupon=handbook50';
-            }, 4000);
+                window.location.href = 'https://cloud-engineer-academy.circle.so/checkout/handbook?coupon_code=HANDBOOK50';
+            }, 3000);
         };
     </script>
 </body>
