@@ -16,6 +16,14 @@
             text-align: center;
             padding: 20px;
         }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
         .loader {
             border: 4px solid #f3f3f3;
             border-radius: 50%;
@@ -37,6 +45,7 @@
             color: #2ecc71;
             font-weight: bold;
             margin-bottom: 10px;
+            font-size: 1.2em;
         }
         .offer-message {
             color: #333;
@@ -44,17 +53,26 @@
             line-height: 1.6;
             margin-top: 15px;
         }
+        .book-image {
+            max-width: 300px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
         iframe {
             display: none;
         }
     </style>
 </head>
 <body>
-    <div class="message">
-        <p class="success-message">✅ Your Cloud Engineering Guide has been downloaded!</p>
-        <p class="offer-message">But before you go...<br>
-        I've got something special that our students have loved combining with the free guide!<br>
-        A limited-time offer is coming your way in just a moment...</p>
+    <div class="container">
+        <img src="cloudenghandb.webp" alt="Cloud Engineering Handbook" class="book-image">
+        <div class="message">
+            <p class="success-message">✅ Your Cloud Engineering Guide has been downloaded!</p>
+            <p class="offer-message">But before you go...<br>
+            I've got something special that our students have loved combining with the free guide!<br>
+            A limited-time offer is coming your way in just a moment...</p>
+        </div>
     </div>
     
     <iframe id="download-frame"></iframe>
