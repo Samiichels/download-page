@@ -33,17 +33,8 @@
             max-width: 600px;
             margin: 0 auto;
         }
-        .download-backup {
-            margin-top: 20px;
-            color: #666;
-            font-size: 14px;
-        }
-        .download-link {
-            color: #3498db;
-            text-decoration: none;
-        }
-        .download-link:hover {
-            text-decoration: underline;
+        iframe {
+            display: none;
         }
     </style>
 </head>
@@ -52,18 +43,25 @@
     <div class="loader"></div>
     <div class="message">
         <p>Your download has started. You'll be redirected to a special offer in a moment...</p>
-        <p class="download-backup">If the download doesn't start automatically, <a href="https://drive.google.com/uc?export=download&id=1t04kDrncLdoc0sreJtKA_S8jG86Zi302" class="download-link">click here</a></p>
     </div>
+    
+    <iframe id="download-frame"></iframe>
     
     <script>
         window.onload = function() {
-            // Try direct download first
-            window.location.href = 'https://drive.google.com/uc?export=download&id=1t04kDrncLdoc0sreJtKA_S8jG86Zi302';
+            // Try multiple download approaches
+            var downloadUrl = 'https://drive.google.com/uc?export=download&id=1t04kDrncLdoc0sreJtKA_S8jG86Zi302';
             
-            // Redirect to product page after delay
+            // Approach 1: Direct link
+            window.location.href = downloadUrl;
+            
+            // Approach 2: Hidden iframe
+            document.getElementById('download-frame').src = downloadUrl;
+            
+            // Redirect after delay
             setTimeout(function() {
                 window.location.href = 'https://cloudengineerac.mysamcart.com/checkout/cloud-engineer-handbook?coupon=handbook50';
-            }, 4000); // Increased to 4 seconds to give more time for download to start
+            }, 4000);
         };
     </script>
 </body>
